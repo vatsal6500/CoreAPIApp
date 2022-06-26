@@ -117,7 +117,7 @@ namespace CoreAPIDemo.Controllers
 
         //POST api/<DepartmentController>
         [HttpPost]
-        public Task<ServiceResponse<DeptVM>> Post([FromForm] DeptVM Deptvm)
+        public Task<ServiceResponse<DeptVM>> Post([FromBody] DeptVM Deptvm)
         {
 
             var response = new ServiceResponse<DeptVM>();

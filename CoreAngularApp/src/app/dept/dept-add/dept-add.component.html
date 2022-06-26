@@ -1,0 +1,12 @@
+<form [formGroup]="addDeptForm" (submit)="createDept()">
+  <table border="0">
+    <tr>
+      <th>Name</th>
+      <td><input type="text" formControlName="DeptName"></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td><button>Add</button></td>
+    </tr>
+  </table>
+</form>

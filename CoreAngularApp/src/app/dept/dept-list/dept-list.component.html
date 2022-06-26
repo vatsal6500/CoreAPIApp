@@ -1,0 +1,21 @@
+<p *ngIf="!deptList"><em>Loading... Please refresh once the ASP.NET backend has started. See <a href="https://aka.ms/jspsintegrationangular">https://aka.ms/jspsintegrationangular</a> for more details.</em></p>
+
+<table *ngIf="deptList">
+  <thead>
+    <tr>
+      <th>Department Id</th>
+      <th>Department Name</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let department of deptList">
+      <td>{{ department.deptId }}</td>
+      <td>{{ department.deptName }}</td>
+      <td>
+        <a [routerLink]="['deptEdit',department._id]">Edit</a> |
+        <a [routerLink]="['deptDelete',department._id]">Delete</a>
+    </td>
+    </tr>
+  </tbody>
+</table>

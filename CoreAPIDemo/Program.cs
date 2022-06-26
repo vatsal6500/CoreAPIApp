@@ -31,6 +31,18 @@ builder.Services.AddHttpContextAccessor();
 
 builder.Services.AddTransient(typeof(IRepository<>), typeof(EfRepository<>));
 
+builder.Services.AddCors();
+
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(
+        builder =>
+        {
+            builder.WithOrigins("https://localhost:7108", "http://localhost:4200")
+                                .AllowAnyHeader()
+                                .AllowAnyMethod();
+        });
+});
 
 var app = builder.Build();
 
@@ -42,6 +54,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors();
 
 app.UseAuthorization();
 
