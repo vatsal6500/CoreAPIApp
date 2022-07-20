@@ -169,7 +169,7 @@ namespace CoreAPIDemo.Controllers
             catch(Exception ex)
             {
                 response.Success = false;
-                response.Message = "Looks like something isn’t quite right. Please try again.";  //Message = GetErrorMessageDetail(ex);
+                response.Message = GetErrorMessageDetail(ex);  //Message = "Looks like something isn’t quite right. Please try again.";
                 //response = StatusCode(StatusCodes.Status500InternalServerError, $"Error in deleting Hotels. Please try again.");
             }
 
